@@ -1,0 +1,26 @@
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@mixin font-400 {
+  font-family: "Font", "Arial", sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-700 {
+  font-family: "Font", "Arial", sans-serif;
+  font-weight: 700;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}

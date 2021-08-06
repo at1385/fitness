@@ -1,0 +1,36 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-width: $mobile-min-width;
+  min-height: 100vh;
+  margin: 0;
+
+  font-family: "Font", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: $darkest;
+
+  // background-color: tomato;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}

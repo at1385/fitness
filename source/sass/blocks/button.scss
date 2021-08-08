@@ -41,3 +41,11 @@
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  .button {
+    &--light {
+      width: 187px;
+    }
+  }
+}
+

@@ -19,3 +19,8 @@
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  .socials {
+    display: none;
+  }
+}

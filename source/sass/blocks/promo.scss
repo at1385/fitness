@@ -42,3 +42,40 @@
   margin-bottom: 30px;
 }
 
+@media (max-width: $tablet-max-width) {
+  .promo {
+    justify-content: center;
+  }
+
+  .promo__header {
+    width: 330px;
+    margin-top: 10px;
+    margin-right: 4%;
+  }
+
+  .promo__list {
+    margin-top: -82px;
+    margin-right: 26px;
+  }
+
+  .promo__button {
+    margin-top: 39px;
+  }
+
+  .promo__photo {
+    max-width: 40%;
+    min-width: 324px;
+    max-height: 503px;
+    min-height: 390px;
+
+    overflow: hidden;
+
+    img {
+      max-width: 102%;
+      height: 102%;
+      object-fit: cover;
+      object-position: -18px 0;
+    }
+  }
+}
+

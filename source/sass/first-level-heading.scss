@@ -18,3 +18,17 @@ h1 {
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  h1 {
+    width: 310px;
+
+    font-size: 86px;
+    -webkit-text-stroke-width: 4px;
+
+    span {
+      font-size: 34px;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+

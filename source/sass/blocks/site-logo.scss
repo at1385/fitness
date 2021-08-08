@@ -3,3 +3,10 @@
   height: 20px;
 }
 
+@media (max-width: $tablet-max-width) {
+  .site-logo {
+    width: 82px;
+    height: 17px;
+  }
+}
+

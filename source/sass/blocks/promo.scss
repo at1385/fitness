@@ -1,0 +1,44 @@
+.promo {
+  display: flex;
+}
+
+.promo__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 395px;
+  margin-top: 66px;
+  margin-right: 65px;
+}
+
+.promo__list {
+  @include list-reset;
+  width: 113px;
+  margin-top: -93px;
+  margin-right: 33px;
+
+  font-size: 14px;
+  line-height: 1.5;
+  color: $lightest;
+  text-align: right;
+}
+
+.promo__button {
+  margin-top: 55px;
+}
+
+.promo__photo {
+  img {
+    vertical-align: top;
+  }
+}
+
+.promo__socials {
+  align-self: flex-end;
+  margin-left: auto;
+  margin-top: 115px;
+  margin-bottom: 30px;
+}
+

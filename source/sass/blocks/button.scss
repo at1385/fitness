@@ -1,0 +1,43 @@
+.button {
+  display: inline-block;
+  width: 206px;
+  padding: 22px;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  color: $darker;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  word-break: break-all;
+
+  border: 2px solid $darker;
+
+  &--light {
+    width: 230px;
+    padding: 19px;
+
+    color: $lightest;
+
+    border: 4px solid $lightest;
+
+    &:hover,
+    &:focus {
+      color: $darker;
+
+      background-color: $lightest;
+    }
+
+    &:focus {
+      outline: 1px dotted rgba($lightest, 0.8);
+      outline-offset: 2px;
+    }
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+}
+

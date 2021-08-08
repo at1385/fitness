@@ -79,3 +79,29 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .promo__header {
+    justify-content: flex-start;
+    width: 66%;
+    min-width: 290px;
+    margin-top: 0;
+    margin-right: 0;
+
+    h1 {
+      margin-left: auto;
+    }
+  }
+
+  .promo__list {
+    margin-top: -75px;
+    margin-right: 100px;
+  }
+
+  .promo__photo {
+    display: none;
+  }
+
+  .promo__button {
+    margin-top: 44px;
+  }
+}

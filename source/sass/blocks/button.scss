@@ -49,3 +49,10 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .button {
+    &--light {
+      width: 100%;
+    }
+  }
+}

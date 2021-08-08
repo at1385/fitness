@@ -32,3 +32,16 @@ h1 {
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  h1 {
+    width: 290px;
+    padding-left: 20px;
+
+    font-size: 78px;
+
+    span {
+      font-size: 28px;
+      letter-spacing: 0.03em;
+    }
+  }
+}

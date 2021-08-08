@@ -29,3 +29,15 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .page-header {
+    padding-top: 19px;
+    padding-bottom: 79px;
+
+    background-image: conic-gradient(from 171.43deg at 35.31% 34.22%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg);
+  }
+
+  .page-header__top-wrapper {
+    margin-bottom: 35px;
+  }
+}

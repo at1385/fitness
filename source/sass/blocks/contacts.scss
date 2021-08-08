@@ -34,3 +34,8 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .contacts {
+    font-size: 20px;
+  }
+}

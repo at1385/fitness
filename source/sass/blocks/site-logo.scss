@@ -10,3 +10,9 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .site-logo {
+    width: 68px;
+    height: 15px;
+  }
+}

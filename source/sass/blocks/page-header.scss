@@ -1,0 +1,18 @@
+.page-header {
+  padding-top: 30px;
+  padding-bottom: 46px;
+
+  background-color: $brightlight;
+  background-image: conic-gradient(from 130.31deg at 16.03% 39.06%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg);
+}
+
+.page-header__top-wrapper {
+  display: grid;
+  grid-template-columns: 89px 1fr;
+  column-gap: 40px;
+}
+
+.page-header__contacts {
+  justify-self: end;
+}
+

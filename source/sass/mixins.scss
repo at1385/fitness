@@ -5,14 +5,32 @@
   list-style: none;
 }
 
-@mixin font-400 {
-  font-family: "Font", "Arial", sans-serif;
+@mixin bebas-neue-400 {
+  font-family: "Bebas Neue", "Arial", sans-serif;
   font-weight: 400;
 }
 
-@mixin font-700 {
-  font-family: "Font", "Arial", sans-serif;
+@mixin bebas-neue-700 {
+  font-family: "Bebas Neue", "Arial", sans-serif;
   font-weight: 700;
+}
+
+@mixin lightest-link-conditions {
+  &:hover,
+  &:focus {
+    color: rgba($lightest, 0.6);
+  }
+
+  &:focus {
+    outline: 1px dotted rgba($lightest, 0.8);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    color: rgba($lightest, 0.3);
+
+    outline: 0;
+  }
 }
 
 @mixin visually-hidden {

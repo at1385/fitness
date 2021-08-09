@@ -27,6 +27,11 @@ const css = () => {
     .pipe(browserSync.stream());
 };
 
+const html = () => {
+  return src('source/*.html')
+    .pipe(dest('build/'));
+};
+
 const imgmin = () => {
   return src('source/img/**/*.{png,jpg,svg}')
     .pipe(imagemin([
@@ -81,7 +86,7 @@ const refresh = (done) => {
 
 const watching = () => {
   watch('source/sass/**/*.scss', css);
-  watch('source/*.html', refresh);
+  watch('source/*.html', series(html, refresh));
   watch('source/img/**/*.{png,jpg,svg}', series(cleanimg, copyimg, refresh));
   watch('source/img/inline-*.svg', series(sprite, refresh));
   watch('source/js/*.js', series(mainjs, refresh));
@@ -94,7 +99,6 @@ const clean = () => {
 
 const copy = () => {
   return src([
-    'source/*.html',
     'source/fonts/**/*.{woff,woff2}',
     'source/img/**/*.{png,jpg,svg}',
     '!source/img/**/inline-*.svg',
@@ -107,7 +111,6 @@ const copy = () => {
 
 const copybuild = () => {
   return src([
-    'source/*.html',
     'source/fonts/**/*.{woff,woff2}',
     'source//*.ico'
   ], {
@@ -138,6 +141,7 @@ const cleansvg = () => {
 };
 
 exports.css = css;
+exports.html = html;
 exports.imgmin = imgmin;
 exports.imgwebp = imgwebp;
 exports.sprite = sprite;
@@ -157,6 +161,7 @@ exports.start = series(
   clean,
   copy,
   css,
+  html,
   imgwebp,
   sprite,
   vendorjs,
@@ -168,6 +173,7 @@ exports.build = series(
   clean,
   copybuild,
   css,
+  html,
   imgmin,
   imgwebp,
   sprite,

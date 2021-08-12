@@ -1,0 +1,142 @@
+.gym {
+  display: flex;
+  justify-content: flex-end;
+
+  max-width: 1366px;
+  padding: 0 103px;
+}
+
+.gym__left-column {
+  width: 355px;
+  margin-right: 22px;
+
+  p {
+    margin: 0;
+    margin-bottom: 9px;
+
+    font-weight: 300;
+    line-height: 1.5;
+  }
+}
+
+.gym__header {
+  margin-bottom: 38px;
+
+  h2 {
+    margin-top: 46px;
+    margin-bottom: 9px;
+
+    @include block-title-desktop;
+  }
+
+  p {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 18px;
+  }
+}
+
+.gym__right-column {
+  width: 62.4%;
+}
+
+.gym__photo {
+  max-width: 660px;
+  max-height: 401px;
+  margin-left: 63px;
+
+  overflow: hidden;
+
+  img {
+    vertical-align: top;
+    object-position: 0 -37px;
+  }
+}
+
+.gym__video {
+  position: relative;
+
+  width: 364px;
+  height: 228px;
+  margin-top: -113px;
+
+  cursor: pointer;
+
+  video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+
+.gym__video-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  &--hidden {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../img/bg-gym-video.jpg");
+    background-repeat: no-repeat;
+    background-position: -2px -27px;
+    background-size: 394px auto;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-gym-video@2x.jpg");
+    }
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(#14367a, 0.5);
+    background-image: url("../img/bg-decor-video.svg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      background-color: transparent;
+
+      box-shadow: 0 0 10px 0 rgba($darkest, 0.75);
+    }
+  }
+
+  &:focus {
+    outline: 1px dotted $darker;
+    outline-offset: 7px;
+  }
+
+  &:active {
+    &::after {
+      opacity: 0.7;
+    }
+  }
+}
+

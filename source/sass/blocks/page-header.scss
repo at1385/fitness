@@ -1,4 +1,5 @@
 .page-header {
+  margin-bottom: 120px;
   padding-top: 30px;
   padding-bottom: 46px;
 
@@ -18,6 +19,7 @@
 
 @media (max-width: $tablet-max-width) {
   .page-header {
+    margin-bottom: 99px;
     padding-top: 39px;
     padding-bottom: 82px;
 
@@ -31,6 +33,7 @@
 
 @media (max-width: $mobile-max-width) {
   .page-header {
+    margin-bottom: 69px;
     padding-top: 19px;
     padding-bottom: 79px;
 
@@ -38,6 +41,7 @@
   }
 
   .page-header__top-wrapper {
+    max-width: 680px;
     margin-bottom: 35px;
   }
 }

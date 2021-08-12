@@ -1,0 +1,294 @@
+.gym {
+  display: flex;
+  justify-content: flex-end;
+
+  max-width: 1366px;
+  padding: 0 103px;
+}
+
+.gym__left-column {
+  width: 355px;
+  margin-right: 22px;
+
+  p {
+    margin: 0;
+    margin-bottom: 9px;
+
+    font-weight: 300;
+    line-height: 1.5;
+  }
+}
+
+.gym__header {
+  margin-bottom: 38px;
+
+  h2 {
+    margin-top: 46px;
+    margin-bottom: 9px;
+
+    @include block-title-desktop;
+  }
+
+  p {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 18px;
+  }
+}
+
+.gym__right-column {
+  width: 62.4%;
+}
+
+.gym__photo {
+  max-width: 660px;
+  max-height: 401px;
+  margin-left: 63px;
+
+  overflow: hidden;
+
+  img {
+    vertical-align: top;
+    object-position: 0 -37px;
+  }
+}
+
+.gym__video {
+  position: relative;
+
+  width: 364px;
+  height: 228px;
+  margin-top: -113px;
+
+  cursor: pointer;
+
+  video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+
+.gym__video-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  &--hidden {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../img/bg-gym-video.jpg");
+    background-repeat: no-repeat;
+    background-position: -2px -27px;
+    background-size: 394px auto;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-gym-video@2x.jpg");
+    }
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(#14367a, 0.5);
+    background-image: url("../img/bg-decor-video.svg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      background-color: transparent;
+
+      box-shadow: 0 0 10px 0 rgba($darkest, 0.75);
+    }
+  }
+
+  &:focus {
+    outline: 1px dotted $darker;
+    outline-offset: 7px;
+  }
+
+  &:active {
+    &::after {
+      opacity: 0.7;
+    }
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .gym {
+    flex-direction: column;
+    align-items: center;
+    max-width: 1199px;
+    padding: 0 45px;
+
+    text-align: center;
+  }
+
+  .gym__left-column {
+    width: 80%;
+    margin-right: 0;
+
+    p {
+      margin-bottom: 44px;
+
+      &:not(:first-of-type) {
+        @include visually-hidden;
+      }
+    }
+  }
+
+  .gym__header {
+    margin-bottom: 33px;
+
+    h2 {
+      margin-top: 0;
+
+      @include block-title-tablet;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .gym__right-column {
+    width: 100%;
+  }
+
+  .gym__photo {
+    max-width: 678px;
+    max-height: 345px;
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    img {
+      max-width: 114%;
+      height: 399px;
+
+      object-position: -89px -18px;
+    }
+  }
+
+  .gym__video {
+    width: 266px;
+    height: 167px;
+    margin: 0 auto;
+    margin-top: -84px;
+  }
+
+  .gym__video-link {
+    &::before {
+      background-position: -2px -20px;
+      background-size: 287px auto;
+    }
+
+    &::after {
+      background-size: 73px 73px;
+    }
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .gym {
+    max-width: 100%;
+    padding: 0;
+
+    text-align: left;
+  }
+
+  .gym__left-column {
+    width: 100%;
+    padding: 0 15px;
+
+    p {
+      max-width: 680px;
+      margin: 0 auto;
+      margin-bottom: 33px;
+      padding-right: 27px;
+    }
+  }
+
+  .gym__header {
+    max-width: 680px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+
+    h2 {
+      margin-bottom: 6px;
+
+      @include block-title-mobile;
+    }
+
+    p {
+      margin-bottom: 0;
+      padding-right: 0;
+    }
+  }
+
+  .gym__photo {
+    width: 100%;
+    height: 313px;
+    margin-bottom: 40px;
+
+    img {
+      max-width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: 90% 50%;
+    }
+  }
+
+  .gym__video {
+    width: 100%;
+    max-width: 678px;
+    margin-top: 0;
+  }
+
+  .gym__video-link {
+    background-image:
+      linear-gradient(rgba(#14367a, 0.5), rgba(#14367a, 0.5)),
+      url("../img/bg-gym-video.jpg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 767px auto;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image:
+        linear-gradient(rgba(#14367a, 0.5), rgba(#14367a, 0.5)),
+        url("../img/bg-gym-video@2x.jpg");
+    }
+
+    &::before {
+      background-position: 50% 5%;
+      background-size: 320px 127%;
+    }
+  }
+}

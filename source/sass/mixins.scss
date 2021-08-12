@@ -42,3 +42,25 @@
   width: 1px;
   overflow: hidden;
 }
+
+@mixin block-title {
+  @include bebas-neue-700;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: $darker;
+}
+
+@mixin block-title-desktop {
+  @include block-title;
+  font-size: 49px;
+}
+
+@mixin block-title-tablet {
+  @include block-title;
+  font-size: 42px;
+}
+
+@mixin block-title-mobile {
+  @include block-title;
+  font-size: 32px;
+}

@@ -9,3 +9,9 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .page-main__gym {
+    margin: 0;
+    margin-bottom: 70px;
+  }
+}

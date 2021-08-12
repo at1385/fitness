@@ -3,3 +3,9 @@
   margin-bottom: 120px;
 }
 
+@media (max-width: $tablet-max-width) {
+  .page-main__gym {
+    margin-bottom: 100px;
+  }
+}
+

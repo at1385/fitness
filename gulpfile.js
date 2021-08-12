@@ -101,6 +101,7 @@ const copy = () => {
   return src([
     'source/fonts/**/*.{woff,woff2}',
     'source/img/**/*.{png,jpg,svg}',
+    'source/video/**/*.mp4',
     '!source/img/**/inline-*.svg',
     'source//*.ico'
   ], {
@@ -112,6 +113,7 @@ const copy = () => {
 const copybuild = () => {
   return src([
     'source/fonts/**/*.{woff,woff2}',
+    'source/video/**/*.mp4',
     'source//*.ico'
   ], {
     base: 'source'

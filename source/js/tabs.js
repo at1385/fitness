@@ -1,5 +1,3 @@
-'use strict';
-
 (function () {
   const seasonTicketsTabsContainer = document.querySelector('.season-tickets__tabs');
   const seasonTicketsTabSwitchersContainer = seasonTicketsTabsContainer.querySelector('.season-tickets__tab-switchers');
@@ -59,20 +57,4 @@
       switchTab(evt, seasonTicketsTabSwitchers, 'season-tickets__tab-switcher', 'season-tickets__tab-switcher--active', seasonTicketsTabData, 'season-tickets__offers--active', 'season-tickets__offers--hidden');
     });
   }
-})();
-
-(function () {
-  const gymVideoContainer = document.querySelector('.gym__video');
-  const gymVideoPlayer = gymVideoContainer.querySelector('video');
-  const gymVideoLink = gymVideoContainer.querySelector('.gym__video-link');
-
-  gymVideoLink.addEventListener('click', function(evt) {
-    evt.preventDefault();
-    gymVideoLink.classList.add('gym__video-link--hidden');
-    gymVideoPlayer.play();
-  });
-
-  gymVideoPlayer.addEventListener('ended', function() {
-    gymVideoLink.classList.remove('gym__video-link--hidden');
-  });
 })();

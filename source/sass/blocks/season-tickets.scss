@@ -205,3 +205,51 @@
   margin-top: auto;
 }
 
+@media (max-width: $tablet-max-width) {
+  .season-tickets {
+    background-image:
+      url("../img/bg-season-tickets-tablet.png"),
+      linear-gradient(0deg, $lightest 53px, $light 53px);
+    background-repeat: no-repeat;
+    background-position:
+      100% 100%,
+      0 0;
+
+    h2 {
+      margin-bottom: 31px;
+
+      @include block-title-tablet;
+    }
+  }
+
+  .season-tickets__tabs {
+    padding-top: 98px;
+    padding-bottom: 111px;
+  }
+
+  .season-tickets__tab-switchers {
+    margin-bottom: 44px;
+  }
+
+  .season-tickets__tab-switcher {
+    &:not(:last-child) {
+      margin-right: 55px;
+    }
+
+    font-size: 18px;
+  }
+
+  .season-tickets__offers {
+    li {
+      width: 65.2%;
+      margin-right: auto;
+      margin-left: auto;
+
+      &:not(:nth-child(3n)) {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+}
+

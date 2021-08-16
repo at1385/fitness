@@ -3,15 +3,27 @@
   margin-bottom: 120px;
 }
 
+.page-main__season-tickets {
+  margin-bottom: 51px;
+}
+
 @media (max-width: $tablet-max-width) {
   .page-main__gym {
     margin-bottom: 100px;
+  }
+
+  .page-main__season-tickets {
+    margin-bottom: 48px;
   }
 }
 
 @media (max-width: $mobile-max-width) {
   .page-main__gym {
     margin: 0;
+    margin-bottom: 70px;
+  }
+
+  .page-main__season-tickets {
     margin-bottom: 70px;
   }
 }

@@ -68,6 +68,16 @@
       outline: none;
     }
   }
+
+  &--wide {
+    width: 100%;
+    padding: 24px;
+
+    &:hover,
+    &:focus {
+      padding: 24px;
+    }
+  }
 }
 
 li {
@@ -86,6 +96,20 @@ li {
   .button {
     &--light {
       width: 187px;
+    }
+
+    &--wide {
+      width: 100%;
+      padding: 12px;
+
+      font-size: 10px;
+
+      border: 2px solid $lightest;
+
+      &:hover,
+      &:focus {
+        padding: 10px;
+      }
     }
   }
 }

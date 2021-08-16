@@ -1,0 +1,181 @@
+.billboard {
+  display: flex;
+}
+
+.billboard__info {
+  width: 43%;
+  padding: 87px 78px;
+
+  background-color: $brightlightest;
+
+  p {
+    margin: 0;
+
+    font-size: 18px;
+    color: $lightest;
+  }
+}
+
+.billboard__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+
+  h2 {
+    margin: 0;
+    margin-right: 5px;
+    width: 59%;
+
+    @include block-title;
+    font-size: 90px;
+    color: $lightest;
+  }
+}
+
+.billboard__schedule {
+  width: 27%;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: 0;
+  margin-left: 5px;
+
+  line-height: 1;
+  color: $lightest;
+
+  dt {
+    margin-bottom: 7px;
+
+    font-size: 18px;
+  }
+
+  dd {
+    display: inline-block;
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
+    padding-top: 4px;
+
+    line-height: 1.4;
+
+    border-top: 1px solid $lightest;
+  }
+
+  span {
+    float: left;
+    max-width: 92px;
+
+    &:not(:last-child) {
+      margin-right: 7px;
+    }
+
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 0.9;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.billboard__button {
+  margin-top: 47px;
+}
+
+.billboard__image {
+  background-color: #000148;
+
+  img {
+    height: 100%;
+
+    vertical-align: top;
+
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .billboard__info {
+    display: flex;
+    flex-direction: column;
+
+    padding: 51px 45px;
+
+    p {
+      margin-bottom: auto;
+
+      font-size: 12px;
+    }
+  }
+
+  .billboard__header {
+    margin-bottom: 0;
+
+    h2 {
+      font-size: 52px;
+    }
+  }
+
+  .billboard__schedule {
+    dt {
+      margin-bottom: 3px;
+
+      font-size: 12px;
+    }
+
+    dd {
+      &:not(:last-child) {
+        margin-bottom: 11px;
+      }
+
+      padding-top: 2px;
+
+      line-height: 1.2;
+    }
+
+    span {
+      &:not(:last-child) {
+        margin-right: 3px;
+      }
+
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 10px;
+    }
+  }
+
+  .billboard__button {
+    margin-top: 29px;
+  }
+
+  .billboard__image {
+    max-width: 57%;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .billboard {
+    flex-direction: column;
+  }
+
+  .billboard__info {
+    width: 100%;
+  }
+
+  .billboard__image {
+    max-width: 100%;
+    height: 292px;
+
+    overflow: hidden;
+
+    img {
+      height: 116%;
+    }
+  }
+}

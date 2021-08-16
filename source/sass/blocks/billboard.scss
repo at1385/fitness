@@ -1,0 +1,100 @@
+.billboard {
+  display: flex;
+}
+
+.billboard__info {
+  width: 43%;
+  padding: 87px 78px;
+
+  background-color: $brightlightest;
+
+  p {
+    margin: 0;
+
+    font-size: 18px;
+    color: $lightest;
+  }
+}
+
+.billboard__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+
+  h2 {
+    margin: 0;
+    margin-right: 5px;
+    width: 59%;
+
+    @include block-title;
+    font-size: 90px;
+    color: $lightest;
+  }
+}
+
+.billboard__schedule {
+  width: 27%;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: 0;
+  margin-left: 5px;
+
+  line-height: 1;
+  color: $lightest;
+
+  dt {
+    margin-bottom: 7px;
+
+    font-size: 18px;
+  }
+
+  dd {
+    display: inline-block;
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
+    padding-top: 4px;
+
+    line-height: 1.4;
+
+    border-top: 1px solid $lightest;
+  }
+
+  span {
+    float: left;
+    max-width: 92px;
+
+    &:not(:last-child) {
+      margin-right: 7px;
+    }
+
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 0.9;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.billboard__button {
+  margin-top: 47px;
+}
+
+.billboard__image {
+  background-color: #000148;
+
+  img {
+    height: 100%;
+
+    vertical-align: top;
+
+    object-fit: cover;
+    object-position: center;
+  }
+}
+

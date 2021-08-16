@@ -68,6 +68,16 @@
       outline: none;
     }
   }
+
+  &--wide {
+    width: 100%;
+    padding: 24px;
+
+    &:hover,
+    &:focus {
+      padding: 24px;
+    }
+  }
 }
 
 li {

@@ -159,3 +159,23 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .billboard {
+    flex-direction: column;
+  }
+
+  .billboard__info {
+    width: 100%;
+  }
+
+  .billboard__image {
+    max-width: 100%;
+    height: 292px;
+
+    overflow: hidden;
+
+    img {
+      height: 116%;
+    }
+  }
+}

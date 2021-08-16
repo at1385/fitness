@@ -97,6 +97,20 @@ li {
     &--light {
       width: 187px;
     }
+
+    &--wide {
+      width: 100%;
+      padding: 12px;
+
+      font-size: 10px;
+
+      border: 2px solid $lightest;
+
+      &:hover,
+      &:focus {
+        padding: 10px;
+      }
+    }
   }
 }
 

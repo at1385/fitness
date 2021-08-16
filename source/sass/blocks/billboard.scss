@@ -98,3 +98,64 @@
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  .billboard__info {
+    display: flex;
+    flex-direction: column;
+
+    padding: 51px 45px;
+
+    p {
+      margin-bottom: auto;
+
+      font-size: 12px;
+    }
+  }
+
+  .billboard__header {
+    margin-bottom: 0;
+
+    h2 {
+      font-size: 52px;
+    }
+  }
+
+  .billboard__schedule {
+    dt {
+      margin-bottom: 3px;
+
+      font-size: 12px;
+    }
+
+    dd {
+      &:not(:last-child) {
+        margin-bottom: 11px;
+      }
+
+      padding-top: 2px;
+
+      line-height: 1.2;
+    }
+
+    span {
+      &:not(:last-child) {
+        margin-right: 3px;
+      }
+
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 10px;
+    }
+  }
+
+  .billboard__button {
+    margin-top: 29px;
+  }
+
+  .billboard__image {
+    max-width: 57%;
+  }
+}
+

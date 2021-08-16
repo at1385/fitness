@@ -275,6 +275,15 @@ h1 span {
   outline: none;
 }
 
+.button--wide {
+  width: 100%;
+  padding: 24px;
+}
+
+.button--wide:hover, .button--wide:focus {
+  padding: 24px;
+}
+
 li:hover .button {
   padding: 26px;
   color: #ffffff;
@@ -285,6 +294,15 @@ li:hover .button {
 @media (max-width: 1199px) {
   .button--light {
     width: 187px;
+  }
+  .button--wide {
+    width: 100%;
+    padding: 12px;
+    font-size: 10px;
+    border: 2px solid #ffffff;
+  }
+  .button--wide:hover, .button--wide:focus {
+    padding: 10px;
   }
 }
 
@@ -508,6 +526,7 @@ li:hover .button {
   line-height: 1;
   letter-spacing: 0.03em;
   color: #102654;
+  text-transform: uppercase;
   font-size: 49px;
 }
 
@@ -641,6 +660,7 @@ li:hover .button {
     line-height: 1;
     letter-spacing: 0.03em;
     color: #102654;
+    text-transform: uppercase;
     font-size: 42px;
   }
   .gym__header p {
@@ -704,6 +724,7 @@ li:hover .button {
     line-height: 1;
     letter-spacing: 0.03em;
     color: #102654;
+    text-transform: uppercase;
     font-size: 32px;
   }
   .gym__header p {
@@ -755,6 +776,13 @@ li:hover .button {
   background-image: url("../img/bg-season-tickets.png"), linear-gradient(0deg, #ffffff 71px, #f8f9fc 71px);
   background-repeat: no-repeat;
   background-position: 100% 100%, 0 0;
+  background-size: 242px auto, auto;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .season-tickets {
+    background-image: url("../img/bg-season-tickets@2x.png"), linear-gradient(0deg, #ffffff 71px, #f8f9fc 71px);
+  }
 }
 
 .season-tickets h2 {
@@ -765,6 +793,7 @@ li:hover .button {
   line-height: 1;
   letter-spacing: 0.03em;
   color: #102654;
+  text-transform: uppercase;
   font-size: 49px;
   text-align: center;
 }
@@ -936,7 +965,17 @@ li:hover .button {
     background-image: url("../img/bg-season-tickets-tablet.png"), linear-gradient(0deg, #ffffff 53px, #f8f9fc 53px);
     background-repeat: no-repeat;
     background-position: 100% 100%, 0 0;
+    background-size: 306px auto, auto;
   }
+}
+
+@media (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1199px) and (min-resolution: 144dpi), (max-width: 1199px) and (min-resolution: 1.5dppx) {
+  .season-tickets {
+    background-image: url("../img/bg-season-tickets-tablet@2x.png"), linear-gradient(0deg, #ffffff 71px, #f8f9fc 71px);
+  }
+}
+
+@media (max-width: 1199px) {
   .season-tickets h2 {
     margin-bottom: 31px;
     font-family: "Bebas Neue", "Arial", sans-serif;
@@ -944,6 +983,7 @@ li:hover .button {
     line-height: 1;
     letter-spacing: 0.03em;
     color: #102654;
+    text-transform: uppercase;
     font-size: 42px;
   }
   .season-tickets__tabs {
@@ -981,6 +1021,7 @@ li:hover .button {
     line-height: 1;
     letter-spacing: 0.03em;
     color: #102654;
+    text-transform: uppercase;
     font-size: 32px;
   }
   .season-tickets__tabs {
@@ -1026,20 +1067,187 @@ li:hover .button {
   }
 }
 
+.billboard {
+  display: flex;
+}
+
+.billboard__info {
+  width: 43%;
+  padding: 87px 78px;
+  background-color: #ed0233;
+}
+
+.billboard__info p {
+  margin: 0;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.billboard__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.billboard__header h2 {
+  margin: 0;
+  margin-right: 5px;
+  width: 59%;
+  font-family: "Bebas Neue", "Arial", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: #102654;
+  text-transform: uppercase;
+  font-size: 90px;
+  color: #ffffff;
+}
+
+.billboard__schedule {
+  width: 27%;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: 0;
+  margin-left: 5px;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.billboard__schedule dt {
+  margin-bottom: 7px;
+  font-size: 18px;
+}
+
+.billboard__schedule dd {
+  display: inline-block;
+  margin: 0;
+  padding-top: 4px;
+  line-height: 1.4;
+  border-top: 1px solid #ffffff;
+}
+
+.billboard__schedule dd:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.billboard__schedule span {
+  float: left;
+  max-width: 92px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.billboard__schedule span:not(:last-child) {
+  margin-right: 7px;
+}
+
+.billboard__schedule p {
+  font-size: 14px;
+}
+
+.billboard__button {
+  margin-top: 47px;
+}
+
+.billboard__image {
+  background-color: #000148;
+}
+
+.billboard__image img {
+  height: 100%;
+  vertical-align: top;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+@media (max-width: 1199px) {
+  .billboard__info {
+    display: flex;
+    flex-direction: column;
+    padding: 51px 45px;
+  }
+  .billboard__info p {
+    margin-bottom: auto;
+    font-size: 12px;
+  }
+  .billboard__header {
+    margin-bottom: 0;
+  }
+  .billboard__header h2 {
+    font-size: 52px;
+  }
+  .billboard__schedule dt {
+    margin-bottom: 3px;
+    font-size: 12px;
+  }
+  .billboard__schedule dd {
+    padding-top: 2px;
+    line-height: 1.2;
+  }
+  .billboard__schedule dd:not(:last-child) {
+    margin-bottom: 11px;
+  }
+  .billboard__schedule span {
+    font-size: 24px;
+  }
+  .billboard__schedule span:not(:last-child) {
+    margin-right: 3px;
+  }
+  .billboard__schedule p {
+    font-size: 10px;
+  }
+  .billboard__button {
+    margin-top: 29px;
+  }
+  .billboard__image {
+    max-width: 57%;
+  }
+}
+
+@media (max-width: 767px) {
+  .billboard {
+    flex-direction: column;
+  }
+  .billboard__info {
+    width: 100%;
+  }
+  .billboard__image {
+    max-width: 100%;
+    height: 292px;
+    overflow: hidden;
+  }
+  .billboard__image img {
+    height: 116%;
+  }
+}
+
 .page-main__gym {
   margin: 0 auto;
   margin-bottom: 120px;
+}
+
+.page-main__season-tickets {
+  margin-bottom: 51px;
 }
 
 @media (max-width: 1199px) {
   .page-main__gym {
     margin-bottom: 100px;
   }
+  .page-main__season-tickets {
+    margin-bottom: 48px;
+  }
 }
 
 @media (max-width: 767px) {
   .page-main__gym {
     margin: 0;
+    margin-bottom: 70px;
+  }
+  .page-main__season-tickets {
     margin-bottom: 70px;
   }
 }

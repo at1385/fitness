@@ -9,6 +9,15 @@
   background-position:
     100% 100%,
     0 0;
+  background-size:
+    242px auto,
+    auto;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image:
+      url("../img/bg-season-tickets@2x.png"),
+      linear-gradient(0deg, $lightest 71px, $light 71px);
+  }
 
   h2 {
     margin: 0;
@@ -214,6 +223,15 @@
     background-position:
       100% 100%,
       0 0;
+    background-size:
+      306px auto,
+      auto;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image:
+        url("../img/bg-season-tickets-tablet@2x.png"),
+        linear-gradient(0deg, $lightest 71px, $light 71px);
+    }
 
     h2 {
       margin-bottom: 31px;

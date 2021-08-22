@@ -11,6 +11,10 @@
   margin-bottom: 116px;
 }
 
+.page-main__coaches {
+  margin-bottom: 80px;
+}
+
 @media (max-width: $tablet-max-width) {
   .page-main__gym {
     margin-bottom: 100px;
@@ -22,6 +26,10 @@
 
   .page-main__billboard {
     margin-bottom: 98px;
+  }
+
+  .page-main__coaches {
+    margin-bottom: 59px;
   }
 }
 
@@ -37,5 +45,9 @@
 
   .page-main__billboard {
     margin-bottom: 68px;
+  }
+
+  .page-main__coaches {
+    margin-bottom: 40px;
   }
 }

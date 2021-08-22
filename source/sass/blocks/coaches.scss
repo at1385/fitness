@@ -1,0 +1,198 @@
+.coaches {
+  max-width: $desktop-max-width;
+  margin: 0 auto;
+  padding: 0 47px;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 52px;
+    padding-left: 56px;
+
+    @include block-title-desktop;
+  }
+}
+
+.coaches__item {
+  position: relative;
+
+  width: 22.4%;
+  height: 294px;
+
+  &:not(:nth-child(4n)) {
+    margin-right: 3.44%;
+  }
+
+  margin-bottom: 40px;
+
+  color: $lightest;
+
+  overflow: hidden;
+
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+    padding: 22px;
+  }
+
+  h3 {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  p {
+    display: none;
+    margin: 0;
+    margin-right: 10px;
+    margin-bottom: 34px;
+
+    text-align: center;
+  }
+
+  ul {
+    display: none;
+    max-height: 110px;
+
+    @include list-reset;
+
+    overflow: auto;
+  }
+
+  li {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+
+    padding-left: 17px;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 1px;
+
+      width: 6px;
+      height: 6px;
+
+      background-color: $lightest;
+
+      border-radius: 50%;
+    }
+  }
+
+  &:hover {
+    div {
+      flex-direction: column;
+      padding: 52px 45px 50px 55px;
+
+      background-color: rgba($darker, 0.89);
+    }
+
+    h3 {
+      margin-left: -10px;
+    }
+
+    p {
+      display: block;
+    }
+
+    ul {
+      display: block;
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .coaches {
+    max-width: 678px;
+    padding: 0;
+
+    h2 {
+      margin-bottom: 41px;
+      padding: 0;
+
+      @include block-title-tablet;
+      text-align: center;
+    }
+  }
+
+  .coaches__item {
+    width: 268px;
+
+    &:not(:nth-child(4n)) {
+      margin-right: 0;
+    }
+
+    &:not(:nth-child(even)) {
+      margin-right: 30px;
+    }
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .coaches {
+    max-width: 290px;
+
+    h2 {
+      margin-bottom: 44px;
+      padding: 0;
+
+      @include block-title-mobile;
+    }
+  }
+
+  .coaches__list {
+    padding: 0 32px;
+  }
+
+  .coaches__item {
+    width: 226px;
+    height: 274px;
+
+    &:not(:nth-child(even)) {
+      margin-right: 0;
+    }
+
+    margin-bottom: 30px;
+
+    &:hover {
+      div {
+        padding: 42px 33px;
+      }
+
+      h3 {
+        margin-left: 0;
+      }
+
+      p {
+        margin-left: 10px;
+        margin-bottom: 33px;
+      }
+    }
+  }
+}

@@ -15,6 +15,10 @@
   margin-bottom: 80px;
 }
 
+.page-main__features {
+  margin-bottom: 118px;
+}
+
 @media (max-width: $tablet-max-width) {
   .page-main__gym {
     margin-bottom: 100px;
@@ -30,6 +34,10 @@
 
   .page-main__coaches {
     margin-bottom: 59px;
+  }
+
+  .page-main__features {
+    margin-bottom: 99px;
   }
 }
 
@@ -49,5 +57,9 @@
 
   .page-main__coaches {
     margin-bottom: 40px;
+  }
+
+  .page-main__features {
+    margin-bottom: 68px;
   }
 }

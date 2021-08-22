@@ -3,6 +3,7 @@
   width: 206px;
   padding: 24px;
 
+  font-family: inherit;
   font-size: 12px;
   font-weight: 700;
   line-height: 1.2;
@@ -13,7 +14,11 @@
   text-transform: uppercase;
   word-break: break-all;
 
+  background-color: transparent;
+
   border: 2px solid $darker;
+
+  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -69,13 +74,29 @@
     }
   }
 
-  &--wide {
+  &--large {
     width: 100%;
     padding: 24px;
 
     &:hover,
     &:focus {
       padding: 24px;
+    }
+  }
+
+  &--wide {
+    width: 100%;
+    padding: 16px;
+
+    font-size: 14px;
+
+    border: 3px solid $lightest;
+
+    &:hover,
+    &:focus {
+      padding: 16px;
+
+      border: 3px solid $lightest;
     }
   }
 }
@@ -98,7 +119,7 @@ li {
       width: 187px;
     }
 
-    &--wide {
+    &--large {
       width: 100%;
       padding: 12px;
 
@@ -110,6 +131,10 @@ li {
       &:focus {
         padding: 10px;
       }
+    }
+
+    &--wide {
+      width: 100%;
     }
   }
 }

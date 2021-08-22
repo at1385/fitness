@@ -2,21 +2,13 @@
   text-align: center;
 
   background-color: $light;
-  background-image:
-    url("../img/bg-season-tickets.png"),
-    linear-gradient(0deg, $lightest 71px, $light 71px);
+  background-image: url("../img/bg-season-tickets.png"), linear-gradient(0deg, $lightest 71px, $light 71px);
   background-repeat: no-repeat;
-  background-position:
-    100% 100%,
-    0 0;
-  background-size:
-    242px auto,
-    auto;
+  background-position: 100% 100%, 0 0;
+  background-size: 242px auto, auto;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image:
-      url("../img/bg-season-tickets@2x.png"),
-      linear-gradient(0deg, $lightest 71px, $light 71px);
+    background-image: url("../img/bg-season-tickets@2x.png"), linear-gradient(0deg, $lightest 71px, $light 71px);
   }
 
   h2 {
@@ -29,7 +21,7 @@
 }
 
 .season-tickets__tabs {
-  padding-top: 118px;
+  padding-top: 120px;
   padding-bottom: 149px;
 }
 
@@ -216,21 +208,14 @@
 
 @media (max-width: $tablet-max-width) {
   .season-tickets {
-    background-image:
-      url("../img/bg-season-tickets-tablet.png"),
-      linear-gradient(0deg, $lightest 53px, $light 53px);
+    background-image: url("../img/bg-season-tickets-tablet.png"), linear-gradient(0deg, $lightest 53px, $light 53px);
     background-repeat: no-repeat;
-    background-position:
-      100% 100%,
-      0 0;
-    background-size:
-      306px auto,
-      auto;
+    background-position: 100% 100%, 0 0;
+    background-size: 306px auto, auto;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image:
-        url("../img/bg-season-tickets-tablet@2x.png"),
-        linear-gradient(0deg, $lightest 71px, $light 71px);
+      background-image: url("../img/bg-season-tickets-tablet@2x.png"),
+        linear-gradient(0deg, $lightest 52px, $light 52px);
     }
 
     h2 {
@@ -260,6 +245,7 @@
   .season-tickets__offers {
     li {
       width: 65.2%;
+      max-width: 678px;
       margin-right: auto;
       margin-left: auto;
 
@@ -302,6 +288,7 @@
   .season-tickets__offers {
     li {
       width: 100%;
+      max-width: 385px;
       padding: 0 15px;
       padding-top: 43px;
       padding-bottom: 47px;

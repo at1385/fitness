@@ -3,7 +3,8 @@
 }
 
 .billboard__info {
-  width: 43%;
+  width: 500px;
+  margin-left: auto;
   padding: 87px 78px;
 
   background-color: $brightlightest;
@@ -18,13 +19,12 @@
 
 .billboard__header {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 5px;
 
   h2 {
+    width: 201px;
     margin: 0;
-    margin-right: 5px;
-    width: 59%;
+    margin-right: 50px;
 
     @include block-title;
     font-size: 90px;
@@ -33,11 +33,10 @@
 }
 
 .billboard__schedule {
-  width: 27%;
+  width: 92px;
   align-items: flex-start;
   align-content: flex-start;
   margin: 0;
-  margin-left: 5px;
 
   line-height: 1;
   color: $lightest;
@@ -86,6 +85,8 @@
 }
 
 .billboard__image {
+  margin-right: auto;
+
   background-color: #000148;
 
   img {
@@ -100,8 +101,7 @@
 
 @media (max-width: $tablet-max-width) {
   .billboard__info {
-    display: flex;
-    flex-direction: column;
+    width: 292px;
 
     padding: 51px 45px;
 
@@ -116,11 +116,16 @@
     margin-bottom: 0;
 
     h2 {
+      width: 117px;
+      margin-right: 29px;
+
       font-size: 52px;
     }
   }
 
   .billboard__schedule {
+    width: 56px;
+
     dt {
       margin-bottom: 3px;
 
@@ -155,7 +160,7 @@
   }
 
   .billboard__image {
-    max-width: 57%;
+    max-width: 386px;
   }
 }
 
@@ -166,11 +171,22 @@
 
   .billboard__info {
     width: 100%;
+    max-width: 385px;
+    margin-right: auto;
+  }
+
+  .billboard__header {
+    justify-content: space-between;
+
+    h2 {
+      margin-right: 27px;
+    }
   }
 
   .billboard__image {
-    max-width: 100%;
+    max-width: 385px;
     height: 292px;
+    margin-left: auto;
 
     overflow: hidden;
 

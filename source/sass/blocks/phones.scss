@@ -1,0 +1,41 @@
+.phones {
+  @include list-reset;
+
+  display: flex;
+  flex-direction: column;
+
+  @include bebas-neue-700;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-align: right;
+  word-break: break-all;
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  a {
+    display: inline-block;
+
+    color: $lightest;
+    vertical-align: top;
+
+    @include lightest-link-conditions;
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .phones {
+    font-size: 24px;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .phones {
+    font-size: 20px;
+  }
+}

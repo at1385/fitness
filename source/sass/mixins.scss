@@ -33,6 +33,24 @@
   }
 }
 
+@mixin dark-link-conditions {
+  &:hover,
+  &:focus {
+    color: rgba($dark, 0.6);
+  }
+
+  &:focus {
+    outline: 1px dotted rgba($dark, 0.8);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    color: rgba($dark, 0.3);
+
+    outline: 0;
+  }
+}
+
 @mixin visually-hidden {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);

@@ -171,11 +171,22 @@
 
   .billboard__info {
     width: 100%;
+    max-width: 385px;
+    margin-right: auto;
+  }
+
+  .billboard__header {
+    justify-content: space-between;
+
+    h2 {
+      margin-right: 27px;
+    }
   }
 
   .billboard__image {
-    max-width: 100%;
+    max-width: 385px;
     height: 292px;
+    margin-left: auto;
 
     overflow: hidden;
 

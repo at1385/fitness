@@ -59,3 +59,37 @@
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  .special-offers {
+    h2 {
+      margin-bottom: 43px;
+
+      @include block-title-tablet;
+    }
+  }
+
+  .special-offers__left-column {
+    min-width: 678px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .special-offers__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 678px;
+    margin: 0 auto;
+
+    li {
+      width: 48%;
+
+      &:nth-child(odd) {
+        margin-right: 4%;
+      }
+
+      margin-bottom: 30px;
+    }
+  }
+}
+

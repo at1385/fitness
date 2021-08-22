@@ -68,3 +68,30 @@
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  .main-offer {
+    max-width: 678px;
+  }
+
+  .main-offer__info {
+    width: 41.3%;
+  }
+
+  .main-offer__image {
+    position: relative;
+    width: 59%;
+
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      max-width: 434px;
+
+      object-position: -3px -2px;
+    }
+  }
+}
+

@@ -127,3 +127,30 @@
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  .coaches {
+    max-width: 678px;
+    padding: 0;
+
+    h2 {
+      margin-bottom: 41px;
+      padding: 0;
+
+      @include block-title-tablet;
+      text-align: center;
+    }
+  }
+
+  .coaches__item {
+    width: 268px;
+
+    &:not(:nth-child(4n)) {
+      margin-right: 0;
+    }
+
+    &:not(:nth-child(even)) {
+      margin-right: 30px;
+    }
+  }
+}
+

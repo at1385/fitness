@@ -96,3 +96,11 @@
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  .js {
+    .slider__item {
+      margin-right: 30px;
+    }
+  }
+}
+

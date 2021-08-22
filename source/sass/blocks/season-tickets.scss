@@ -2,21 +2,13 @@
   text-align: center;
 
   background-color: $light;
-  background-image:
-    url("../img/bg-season-tickets.png"),
-    linear-gradient(0deg, $lightest 71px, $light 71px);
+  background-image: url("../img/bg-season-tickets.png"), linear-gradient(0deg, $lightest 71px, $light 71px);
   background-repeat: no-repeat;
-  background-position:
-    100% 100%,
-    0 0;
-  background-size:
-    242px auto,
-    auto;
+  background-position: 100% 100%, 0 0;
+  background-size: 242px auto, auto;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image:
-      url("../img/bg-season-tickets@2x.png"),
-      linear-gradient(0deg, $lightest 71px, $light 71px);
+    background-image: url("../img/bg-season-tickets@2x.png"), linear-gradient(0deg, $lightest 71px, $light 71px);
   }
 
   h2 {
@@ -216,20 +208,13 @@
 
 @media (max-width: $tablet-max-width) {
   .season-tickets {
-    background-image:
-      url("../img/bg-season-tickets-tablet.png"),
-      linear-gradient(0deg, $lightest 53px, $light 53px);
+    background-image: url("../img/bg-season-tickets-tablet.png"), linear-gradient(0deg, $lightest 53px, $light 53px);
     background-repeat: no-repeat;
-    background-position:
-      100% 100%,
-      0 0;
-    background-size:
-      306px auto,
-      auto;
+    background-position: 100% 100%, 0 0;
+    background-size: 306px auto, auto;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image:
-        url("../img/bg-season-tickets-tablet@2x.png"),
+      background-image: url("../img/bg-season-tickets-tablet@2x.png"),
         linear-gradient(0deg, $lightest 71px, $light 71px);
     }
 

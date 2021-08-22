@@ -1,0 +1,98 @@
+.js {
+  .slider__wrapper {
+    overflow: hidden;
+  }
+
+  .slider__list {
+    flex-wrap: nowrap;
+
+    transition: 0.5s;
+  }
+
+  .slider__item {
+    margin-right: 3.46%;
+  }
+}
+
+.slider {
+  position: relative;
+  padding: 0 56px;
+}
+
+.slider__wrapper {
+  margin: 0 auto;
+
+  &--coaches {
+    max-width: 1160px;
+  }
+
+  &--reviews {
+    max-width: 560px;
+  }
+}
+
+.slider__list {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.slider__item {
+  flex-shrink: 0;
+}
+
+.slider__buttons-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  transform: translate(-50%, calc(-50% - 20px));
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.slider__button {
+  width: 18px;
+  height: 34px;
+  padding: 0;
+
+  background-color: transparent;
+  background-image: url("../img/bg-icon-arrow-pointer.svg");
+
+  border: none;
+
+  cursor: pointer;
+
+  &--next {
+    transform: rotate(180deg);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+
+    cursor: default;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 1px dotted rgba($dark, 0.6);
+
+    &:disabled {
+      outline: none;
+    }
+  }
+
+  &:active {
+    outline: none;
+
+    opacity: 0.3;
+  }
+}
+

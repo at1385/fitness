@@ -3,6 +3,7 @@
   width: 206px;
   padding: 24px;
 
+  font-family: inherit;
   font-size: 12px;
   font-weight: 700;
   line-height: 1.2;
@@ -13,7 +14,11 @@
   text-transform: uppercase;
   word-break: break-all;
 
+  background-color: transparent;
+
   border: 2px solid $darker;
+
+  cursor: pointer;
 
   &:hover,
   &:focus {

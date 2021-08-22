@@ -154,3 +154,45 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .coaches {
+    max-width: 290px;
+
+    h2 {
+      margin-bottom: 44px;
+      padding: 0;
+
+      @include block-title-mobile;
+    }
+  }
+
+  .coaches__list {
+    padding: 0 32px;
+  }
+
+  .coaches__item {
+    width: 226px;
+    height: 274px;
+
+    &:not(:nth-child(even)) {
+      margin-right: 0;
+    }
+
+    margin-bottom: 30px;
+
+    &:hover {
+      div {
+        padding: 42px 33px;
+      }
+
+      h3 {
+        margin-left: 0;
+      }
+
+      p {
+        margin-left: 10px;
+        margin-bottom: 33px;
+      }
+    }
+  }
+}

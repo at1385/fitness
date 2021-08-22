@@ -95,3 +95,43 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .main-offer {
+    flex-direction: column;
+    max-width: 290px;
+  }
+
+  .main-offer__info {
+    width: 100%;
+    min-height: 299px;
+    padding: 41px 50px 43px;
+
+    text-align: center;
+
+    h2 {
+      margin-bottom: 16px;
+
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+  }
+
+  .main-offer__link {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .main-offer__image {
+    width: 100%;
+    height: 299px;
+
+    img {
+      max-width: 320px;
+
+      object-position: -5px -8px;
+    }
+  }
+}

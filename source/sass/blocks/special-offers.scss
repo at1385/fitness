@@ -93,3 +93,48 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .special-offers {
+    flex-direction: column;
+
+    h2 {
+      margin-bottom: 44px;
+
+      @include block-title-mobile;
+    }
+  }
+
+  .special-offers__left-column {
+    width: 290px;
+    min-width: 290px;
+  }
+
+  .special-offers__list {
+    max-width: 290px;
+
+    li {
+      width: 100%;
+      padding-top: 35px;
+      padding-bottom: 39px;
+
+      &:nth-child(odd) {
+        margin-right: 0;
+      }
+
+      &:not(:nth-last-child(-n+2)) {
+        margin-bottom: 0;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+
+      text-align: center;
+    }
+  }
+
+  .special-offers__link {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

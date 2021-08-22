@@ -7,6 +7,10 @@
   margin-bottom: 50px;
 }
 
+.page-main__billboard {
+  margin-bottom: 116px;
+}
+
 }
 
 @media (max-width: $tablet-max-width) {
@@ -17,6 +21,11 @@
   .page-main__season-tickets {
     margin-bottom: 48px;
   }
+
+  .page-main__billboard {
+    margin-bottom: 98px;
+  }
+
 }
 
 @media (max-width: $mobile-max-width) {
@@ -28,4 +37,9 @@
   .page-main__season-tickets {
     margin-bottom: 70px;
   }
+
+  .page-main__billboard {
+    margin-bottom: 68px;
+  }
+
 }

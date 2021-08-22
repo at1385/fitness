@@ -83,6 +83,22 @@
       padding: 24px;
     }
   }
+
+  &--wide {
+    width: 100%;
+    padding: 16px;
+
+    font-size: 14px;
+
+    border: 3px solid $lightest;
+
+    &:hover,
+    &:focus {
+      padding: 16px;
+
+      border: 3px solid $lightest;
+    }
+  }
 }
 
 li {
@@ -115,6 +131,10 @@ li {
       &:focus {
         padding: 10px;
       }
+    }
+
+    &--wide {
+      width: 100%;
     }
   }
 }

@@ -1,0 +1,140 @@
+.special-offers {
+  display: flex;
+  flex-wrap: wrap;
+
+  h2 {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 52px;
+
+    @include block-title-desktop;
+    text-align: center;
+  }
+}
+
+.special-offers__left-column {
+  width: 48.3%;
+  margin-right: 3.4%;
+}
+
+.special-offers__list {
+  @include list-reset;
+
+  width: 48.3%;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    min-height: 211px;
+    margin-bottom: 40px;
+
+    padding: 24px 29px 28px;
+
+    border: 7px solid transparent;
+    border-image: linear-gradient(-200deg, $brightlight, #00359f);
+    border-image-slice: 1;
+  }
+
+  h3 {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.special-offers__link {
+  align-self: flex-start;
+  margin-top: auto;
+
+  &:not(:last-of-type) {
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .special-offers {
+    h2 {
+      margin-bottom: 43px;
+
+      @include block-title-tablet;
+    }
+  }
+
+  .special-offers__left-column {
+    min-width: 678px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .special-offers__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 678px;
+    margin: 0 auto;
+
+    li {
+      width: 48%;
+
+      &:nth-child(odd) {
+        margin-right: 4%;
+      }
+
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .special-offers {
+    flex-direction: column;
+
+    h2 {
+      margin-bottom: 44px;
+
+      @include block-title-mobile;
+    }
+  }
+
+  .special-offers__left-column {
+    width: 290px;
+    min-width: 290px;
+  }
+
+  .special-offers__list {
+    max-width: 290px;
+
+    li {
+      width: 100%;
+      padding-top: 35px;
+      padding-bottom: 39px;
+
+      &:nth-child(odd) {
+        margin-right: 0;
+      }
+
+      &:not(:nth-last-child(-n+2)) {
+        margin-bottom: 0;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+
+      text-align: center;
+    }
+  }
+
+  .special-offers__link {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

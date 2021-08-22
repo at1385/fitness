@@ -1,0 +1,44 @@
+.link {
+  max-width: 100%;
+
+  font-size: 12px;
+  font-weight: 700;
+  color: inherit;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  word-wrap: break-word;
+
+  border-bottom: 1px solid $dark;
+
+  @include dark-link-conditions;
+
+  &:hover,
+  &:focus {
+    border-bottom-color: rgba($dark, 0.6);
+  }
+
+  &:active {
+    border-bottom-color: rgba($dark, 0.3);
+  }
+
+  &--light {
+    color: $lightest;
+
+    border-bottom: 1px solid $lightest;
+
+    @include lightest-link-conditions;
+
+    &:hover,
+    &:focus {
+      border-bottom-color: rgba($lightest, 0.6);
+    }
+
+    &:active {
+      border-bottom-color: rgba($lightest, 0.3);
+    }
+  }
+
+  &--large {
+    font-size: 14px;
+  }
+}

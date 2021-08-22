@@ -1,0 +1,61 @@
+.special-offers {
+  display: flex;
+  flex-wrap: wrap;
+
+  h2 {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 52px;
+
+    @include block-title-desktop;
+    text-align: center;
+  }
+}
+
+.special-offers__left-column {
+  width: 48.3%;
+  margin-right: 3.4%;
+}
+
+.special-offers__list {
+  @include list-reset;
+
+  width: 48.3%;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    min-height: 211px;
+    margin-bottom: 40px;
+
+    padding: 24px 29px 28px;
+
+    border: 7px solid transparent;
+    border-image: linear-gradient(-200deg, $brightlight, #00359f);
+    border-image-slice: 1;
+  }
+
+  h3 {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.special-offers__link {
+  align-self: flex-start;
+  margin-top: auto;
+
+  &:not(:last-of-type) {
+    margin-bottom: 5px;
+  }
+}
+

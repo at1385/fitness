@@ -1,0 +1,61 @@
+.free-workout-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 70px 103px 68px;
+
+  background-color: $darker;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 39px;
+
+    @include block-title-desktop;
+    color: $lightest;
+  }
+}
+
+.free-workout-form__wrapper {
+  width: 100%;
+}
+
+.free-workout-form__content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 86%;
+}
+
+.free-workout-form__field {
+  width: 46%;
+  margin-bottom: 28px;
+
+  &:nth-last-child(odd) {
+    margin-right: 8%;
+  }
+
+  input {
+    width: 100%;
+    padding: 5px 0;
+
+    font-family: inherit;
+    font-size: 14px;
+    color: $lightest;
+
+    background-color: $darker;
+
+    border: none;
+    border-bottom: 1px solid rgba($lightest, 0.4);
+    outline: none;
+
+    &::placeholder {
+      color: rgba($lightest, 0.8);
+    }
+
+    &:focus::placeholder {
+      color: $lightest;
+      opacity: 1;
+    }
+  }
+}
+

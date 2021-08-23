@@ -1,0 +1,28 @@
+.page-footer {
+  padding-top: 42px;
+  padding-bottom: 24px;
+
+  background-color: $darkest;
+}
+
+.page-footer__wrapper {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+}
+
+.page-footer__site-logo {
+  margin-top: 3px;
+  margin-right: 95px;
+}
+
+.page-footer__main-navigation {
+  margin: 0 auto;
+  margin-top: 3px;
+}
+
+.page-footer__socials {
+  margin-left: 35px;
+}
+

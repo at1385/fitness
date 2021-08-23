@@ -17,6 +17,46 @@
 
     @include lightest-link-conditions;
   }
+
+  &--horizontal-icons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 110px;
+
+    li {
+      margin-left: 0;
+    }
+
+    li:not(:nth-child(3n+1)) {
+      margin-left: 25px;
+    }
+  }
+}
+
+.socials__icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+
+  vertical-align: top;
+
+  background-repeat: no-repeat;
+
+  &--vkontakte {
+    background-image: url("../img/bg-icon-socials-vk.svg");
+    background-position: 50% 4px;
+  }
+
+  &--instagram {
+    background-image: url("../img/bg-icon-socials-instagram.svg");
+  }
+
+  &--facebook {
+    width: 12px;
+    height: 24px;
+
+    background-image: url("../img/bg-icon-socials-facebook.svg");
+  }
 }
 
 @media (max-width: $tablet-max-width) {

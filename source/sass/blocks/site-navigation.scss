@@ -1,0 +1,27 @@
+.site-navigation {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 470px;
+
+  font-size: 14px;
+
+  li {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: auto;
+    }
+
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: $lightest;
+
+    @include lightest-link-conditions;
+  }
+}
+

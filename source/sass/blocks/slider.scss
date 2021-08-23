@@ -1,6 +1,10 @@
 .js {
   .slider__wrapper {
     overflow: hidden;
+
+    &--reviews {
+      box-shadow: 0 0 40px rgba($dark, 0.2);
+    }
   }
 
   .slider__list {
@@ -11,6 +15,9 @@
 
   .slider__item {
     margin-right: 3.46%;
+    margin-bottom: 0;
+
+    box-shadow: none;
   }
 }
 
@@ -22,12 +29,8 @@
 .slider__wrapper {
   margin: 0 auto;
 
-  &--coaches {
-    max-width: 1160px;
-  }
-
   &--reviews {
-    max-width: 560px;
+    max-width: 566px;
   }
 }
 
@@ -51,7 +54,7 @@
   justify-content: space-between;
   width: 100%;
 
-  transform: translate(-50%, calc(-50% - 20px));
+  transform: translate(-50%, -50%);
 
   &--hidden {
     display: none;
@@ -105,12 +108,14 @@
 }
 
 @media (max-width: $mobile-max-width) {
-  .slider {
-    padding: 0 32px;
+  .js {
+    .slider__wrapper {
+      box-shadow: 0 0 40px rgba($dark, 0.2);
+    }
   }
 
-  .slider__buttons-wrapper {
-    transform: translate(-50%, calc(-50% - 15px));
+  .slider {
+    padding: 0 32px;
   }
 
   .slider__button {

@@ -12,7 +12,7 @@
 }
 
 .page-main__coaches {
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 }
 
 .page-main__features {
@@ -21,6 +21,10 @@
 
 .page-main__special-offers {
   margin-bottom: 78px;
+}
+
+.page-main__reviews {
+  margin-bottom: 120px;
 }
 
 @media (max-width: $tablet-max-width) {
@@ -37,7 +41,7 @@
   }
 
   .page-main__coaches {
-    margin-bottom: 59px;
+    margin-bottom: 99px;
   }
 
   .page-main__features {
@@ -46,6 +50,10 @@
 
   .page-main__special-offers {
     margin-bottom: 70px;
+  }
+
+  .page-main__reviews {
+    margin-bottom: 99px;
   }
 }
 
@@ -64,7 +72,7 @@
   }
 
   .page-main__coaches {
-    margin-bottom: 40px;
+    margin-bottom: 70px;
   }
 
   .page-main__features {
@@ -73,5 +81,9 @@
 
   .page-main__special-offers {
     margin-bottom: 38px;
+  }
+
+  .page-main__reviews {
+    margin-bottom: 70px;
   }
 }

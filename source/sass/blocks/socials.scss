@@ -75,5 +75,34 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .socials {
+    &--horizontal-icons {
+      width: 143px;
+      margin-top: 0;
+
+      li:not(:nth-child(3n+1)) {
+        margin-left: 35px;
+      }
+    }
+  }
+
+  .socials__icon {
+    background-size: contain;
+
+    &--vkontakte {
+      width: 32px;
+      height: 32px;
+    }
+
+    &--instagram {
+      width: 27px;
+      height: 27px;
+    }
+
+    &--facebook {
+      width: 14px;
+      height: 27px;
+    }
   }
 }

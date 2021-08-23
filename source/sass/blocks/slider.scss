@@ -54,7 +54,7 @@
   justify-content: space-between;
   width: 100%;
 
-  transform: translate(-50%, calc(-50% - 20px));
+  transform: translate(-50%, -50%);
 
   &--hidden {
     display: none;
@@ -116,10 +116,6 @@
 
   .slider {
     padding: 0 32px;
-  }
-
-  .slider__buttons-wrapper {
-    transform: translate(-50%, -50%);
   }
 
   .slider__button {

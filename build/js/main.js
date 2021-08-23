@@ -1,6 +1,105 @@
 'use strict';
 
 (function () {
+  document.body.classList.add('js');
+})();
+
+(function () {
+  const TABLET_MAX_WIDTH = 1199;
+  const MOBILE_MAX_WIDTH = 767;
+
+  const sliders = document.querySelectorAll('.slider');
+
+  const initSlider = (slider, desktopShownQuantity = 1, tabletShownQuantity = 1, mobileShownQuantity = 1, desktopStep = desktopShownQuantity, tabletStep = tabletShownQuantity, mobileStep = mobileShownQuantity) => {
+    const slidesContainer = slider.querySelector('.slider__wrapper');
+    const sliderTrack = slider.querySelector('.slider__list');
+    const slides = slider.querySelectorAll('.slider__item');
+    const sliderButtonsContainer = slider.querySelector('.slider__buttons-wrapper');
+    const sliderButtonPrev = slider.querySelector('.slider__button--prev');
+    const sliderButtonNext = slider.querySelector('.slider__button--next');
+
+    let position = 0;
+    let slidesShownQuantity = desktopShownQuantity;
+    let sliderStep = desktopStep;
+
+    if (window.matchMedia(`(max-width: ${TABLET_MAX_WIDTH}px)`).matches) {
+      slidesShownQuantity = tabletShownQuantity;
+      sliderStep = tabletStep;
+    }
+
+    if (window.matchMedia(`(max-width: ${MOBILE_MAX_WIDTH}px)`).matches) {
+      slidesShownQuantity = mobileShownQuantity;
+      sliderStep = mobileStep;
+    }
+
+    let slideWidth = Math.floor((slidesContainer.clientWidth + parseFloat(getComputedStyle(slides[0]).marginRight)) / slidesShownQuantity);
+    let movePosition = sliderStep * slideWidth;
+
+    sliderButtonsContainer.classList.remove('slider__buttons-wrapper--hidden');
+
+    sliderButtonPrev.addEventListener('click', () => {
+      const slidesLeft = Math.abs(position) / slideWidth;
+
+      position += slidesLeft >= sliderStep ? movePosition : slidesLeft * slideWidth;
+
+      setPosition();
+      checkButtons();
+    });
+
+    sliderButtonNext.addEventListener('click', () => {
+      const slidesLeft = slides.length - (Math.abs(position) + slidesShownQuantity * slideWidth) / slideWidth;
+
+      position -= slidesLeft >= sliderStep ? movePosition : slidesLeft * slideWidth;
+
+      setPosition();
+      checkButtons();
+    });
+
+    const setPosition = () => {
+      sliderTrack.style.transform = `translateX(${position}px)`;
+    };
+
+    const checkButtons = () => {
+      sliderButtonPrev.disabled = position === 0;
+      sliderButtonNext.disabled = position <= -(slides.length - slidesShownQuantity) * slideWidth;
+    };
+
+    checkButtons();
+
+    const reinitSlider = (shownQuantity, step = shownQuantity) => {
+      slidesShownQuantity = shownQuantity;
+      sliderStep = step;
+      slideWidth = Math.floor((slidesContainer.clientWidth + parseFloat(getComputedStyle(slides[0]).marginRight)) / slidesShownQuantity);
+      movePosition = sliderStep * slideWidth;
+    }
+
+    function onWindowResize() {
+      if (window.outerWidth <= TABLET_MAX_WIDTH) {
+        reinitSlider(tabletShownQuantity);
+      }
+
+      if (window.outerWidth <= MOBILE_MAX_WIDTH) {
+        reinitSlider(mobileShownQuantity);
+      }
+
+      if (window.outerWidth > TABLET_MAX_WIDTH) {
+        reinitSlider(desktopShownQuantity);
+      }
+    }
+
+    window.addEventListener('resize', onWindowResize);
+  }
+
+  sliders.forEach((item) => {
+    if (item.classList.contains('slider--four-two-one')) {
+      initSlider(item, 4, 2, 1);
+    } else {
+      initSlider(item);
+    }
+  });
+})();
+
+(function () {
   const seasonTicketsTabsContainer = document.querySelector('.season-tickets__tabs');
   const seasonTicketsTabSwitchersContainer = seasonTicketsTabsContainer.querySelector('.season-tickets__tab-switchers');
   const seasonTicketsTabSwitchers = seasonTicketsTabSwitchersContainer.querySelectorAll('.season-tickets__tab-switcher');

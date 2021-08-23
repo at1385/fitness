@@ -56,3 +56,23 @@
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  .reviews {
+    width: 678px;
+
+    h2 {
+      margin-bottom: 40px;
+
+      @include block-title-tablet;
+    }
+  }
+
+  .reviews__list {
+    width: 566px;
+
+    li {
+      padding: 55px 65px 56px;
+    }
+  }
+}
+

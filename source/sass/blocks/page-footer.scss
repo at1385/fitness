@@ -26,3 +26,22 @@
   margin-left: 35px;
 }
 
+@media (max-width: $tablet-max-width) {
+  .page-footer {
+    padding-bottom: 25px;
+  }
+
+  .page-footer__site-logo {
+    margin-top: 4px;
+    margin-right: 63px;
+  }
+
+  .page-footer__main-navigation {
+    margin-top: 5px;
+  }
+
+  .page-footer__socials {
+    margin-left: 44px;
+  }
+}
+

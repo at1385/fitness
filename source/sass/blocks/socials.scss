@@ -62,5 +62,18 @@
 @media (max-width: $tablet-max-width) {
   .socials {
     display: none;
+
+    &--horizontal-icons {
+      display: flex;
+      width: 100px;
+      margin-top: 3px;
+    }
+
+    li:not(:nth-child(3n+1)) {
+      margin-left: 20px;
+    }
+  }
+}
+
   }
 }

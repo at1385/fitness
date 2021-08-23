@@ -25,3 +25,13 @@
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  .site-navigation {
+    max-width: 421px;
+
+    li {
+      margin-right: 30px;
+    }
+  }
+}
+

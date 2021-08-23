@@ -1,6 +1,10 @@
 .js {
   .slider__wrapper {
     overflow: hidden;
+
+    &--reviews {
+      box-shadow: 0 0 40px rgba($dark, 0.2);
+    }
   }
 
   .slider__list {
@@ -11,6 +15,9 @@
 
   .slider__item {
     margin-right: 3.46%;
+    margin-bottom: 0;
+
+    box-shadow: none;
   }
 }
 
@@ -27,7 +34,7 @@
   }
 
   &--reviews {
-    max-width: 560px;
+    max-width: 566px;
   }
 }
 

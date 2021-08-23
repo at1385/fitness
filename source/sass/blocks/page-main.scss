@@ -27,6 +27,33 @@
   margin-bottom: 120px;
 }
 
+.page-main__columns {
+  position: relative;
+
+  background-image: linear-gradient(to right, $darker 50%, $lightest 50%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 50%;
+    height: 1px;
+
+    background-color: #74819c;
+  }
+}
+
+.page-main__columns-wrapper {
+  display: flex;
+  padding: 0;
+}
+
+.page-main__column {
+  width: 50%;
+}
+
 @media (max-width: $tablet-max-width) {
   .page-main__gym {
     margin-bottom: 100px;
@@ -54,6 +81,26 @@
 
   .page-main__reviews {
     margin-bottom: 99px;
+  }
+
+  .page-main__columns {
+    background-image: none;
+
+    &::before {
+      background-color: transparent;
+    }
+  }
+
+  .page-main__columns-wrapper {
+    flex-direction: column;
+  }
+
+  .page-main__column {
+    width: 100%;
+
+    &:nth-child(odd) {
+      background-color: $darker;
+    }
   }
 }
 

@@ -82,6 +82,26 @@
   .page-main__reviews {
     margin-bottom: 99px;
   }
+
+  .page-main__columns {
+    background-image: none;
+
+    &::before {
+      background-color: transparent;
+    }
+  }
+
+  .page-main__columns-wrapper {
+    flex-direction: column;
+  }
+
+  .page-main__column {
+    width: 100%;
+
+    &:nth-child(odd) {
+      background-color: $darker;
+    }
+  }
 }
 
 @media (max-width: $mobile-max-width) {

@@ -112,12 +112,18 @@
 }
 
 @media (max-width: $mobile-max-width) {
+  .js {
+    .slider__wrapper {
+      box-shadow: 0 0 40px rgba($dark, 0.2);
+    }
+  }
+
   .slider {
     padding: 0 32px;
   }
 
   .slider__buttons-wrapper {
-    transform: translate(-50%, calc(-50% - 15px));
+    transform: translate(-50%, -50%);
   }
 
   .slider__button {

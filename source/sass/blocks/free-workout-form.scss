@@ -89,3 +89,32 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .free-workout-form {
+    padding: 68px 15px 69px;
+
+    h2 {
+      margin-bottom: 36px;
+
+      font-size: 32px;
+    }
+  }
+
+  .free-workout-form__content-wrapper {
+    width: 100%;
+  }
+
+  .free-workout-form__field {
+    width: 100%;
+
+    &:nth-last-child(odd) {
+      margin-right: 0;
+    }
+
+    margin-bottom: 32px;
+  }
+
+  .free-workout-form__submit {
+    margin-top: 6px;
+  }
+}

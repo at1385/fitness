@@ -138,7 +138,7 @@
     border: 7px solid $lightest;
 
     &:hover {
-      border: 7px solid transparent;
+      border: 7px solid $brightlight;
       border-image: linear-gradient(-225deg, $brightlight, #00359f);
       border-image-slice: 1;
     }

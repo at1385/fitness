@@ -1,3 +1,72 @@
+(function () {
+  const PHONE_LENGTH = 18;
+
+  const form = document.querySelector('.free-workout-form');
+  const formPhones = form.querySelectorAll('.form-phone-field input');
+
+  function maskPhone(selector, masked = '+7 (___) ___-__-__') {
+    const elems = document.querySelectorAll(selector);
+
+    function mask(event) {
+      const keyCode = event.keyCode;
+      const template = masked;
+      const def = template.replace(/\D/g, '');
+      const val = this.value.replace(/\D/g, '');
+
+      let i = 0;
+      let newValue = template.replace(/[_\d]/g, function (a) {
+        return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
+      });
+
+      i = newValue.indexOf('_');
+
+      if (i !== -1) {
+        newValue = newValue.slice(0, i);
+      }
+
+      let reg = template.substr(0, this.value.length).replace(/_+/g, function (a) {
+        return '\\d{1,' + a.length + '}';
+      }).replace(/[+()]/g, '\\$&');
+
+      reg = new RegExp('^' + reg + '$');
+
+      if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) {
+        this.value = newValue;
+      }
+
+      if (event.type === 'blur' && this.value.length < 5) {
+        this.value = '';
+      }
+    }
+
+    for (const elem of elems) {
+      elem.addEventListener('input', mask);
+      elem.addEventListener('focus', mask);
+      elem.addEventListener('blur', mask);
+    }
+  }
+
+  maskPhone('.form-phone-field input');
+
+  function checkPhoneLength(phoneField) {
+    if (phoneField.value.length < PHONE_LENGTH) {
+      phoneField.setCustomValidity('+7 (XXX) XXX XX XX');
+    } else {
+      phoneField.setCustomValidity('');
+    }
+
+    phoneField.reportValidity();
+  }
+
+  if (formPhones) {
+    formPhones.forEach(function (item) {
+      item.addEventListener('input', function () {
+        checkPhoneLength(item);
+      });
+    });
+  }
+})();
+
 'use strict';
 
 (function () {
@@ -5,8 +74,30 @@
 })();
 
 (function () {
+  const seasonTicketsScroll = document.querySelector('.promo__button');
+  const seasonTickets = document.querySelector('#season-tickets');
+
+  function scrollTo(element) {
+    window.scroll({
+      left: 0,
+      top: element.offsetTop,
+      behavior: 'smooth',
+    });
+  }
+
+  if (seasonTicketsScroll && seasonTickets) {
+    seasonTicketsScroll.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      scrollTo(seasonTickets);
+    });
+  }
+})();
+
+(function () {
+  const TABLET_MIN_WIDTH = 768;
   const TABLET_MAX_WIDTH = 1199;
   const MOBILE_MAX_WIDTH = 767;
+  const TOUCH_TRACK = 50;
 
   const sliders = document.querySelectorAll('.slider');
 
@@ -21,60 +112,120 @@
     let position = 0;
     let slidesShownQuantity = desktopShownQuantity;
     let sliderStep = desktopStep;
+    let slideWidth = 0;
+    let movePosition = 0;
 
-    if (window.matchMedia(`(max-width: ${TABLET_MAX_WIDTH}px)`).matches) {
+    if (window.outerWidth >= TABLET_MIN_WIDTH && window.outerWidth <= TABLET_MAX_WIDTH) {
       slidesShownQuantity = tabletShownQuantity;
       sliderStep = tabletStep;
     }
 
-    if (window.matchMedia(`(max-width: ${MOBILE_MAX_WIDTH}px)`).matches) {
+    if (window.outerWidth <= MOBILE_MAX_WIDTH) {
       slidesShownQuantity = mobileShownQuantity;
       sliderStep = mobileStep;
     }
 
-    let slideWidth = Math.floor((slidesContainer.clientWidth + parseFloat(getComputedStyle(slides[0]).marginRight)) / slidesShownQuantity);
-    let movePosition = sliderStep * slideWidth;
+    if (slidesContainer) {
+      slideWidth = Math.floor((slidesContainer.clientWidth + parseFloat(getComputedStyle(slides[0]).marginRight)) / slidesShownQuantity);
+      movePosition = sliderStep * slideWidth;
+    }
 
-    sliderButtonsContainer.classList.remove('slider__buttons-wrapper--hidden');
+    if (sliderButtonsContainer) {
+      sliderButtonsContainer.classList.remove('slider__buttons-wrapper--hidden');
+    }
 
-    sliderButtonPrev.addEventListener('click', () => {
+    const onButtonPrevClick = () => {
       const slidesLeft = Math.abs(position) / slideWidth;
 
       position += slidesLeft >= sliderStep ? movePosition : slidesLeft * slideWidth;
 
       setPosition();
       checkButtons();
-    });
+    }
 
-    sliderButtonNext.addEventListener('click', () => {
+    const onButtonNextClick = () => {
       const slidesLeft = slides.length - (Math.abs(position) + slidesShownQuantity * slideWidth) / slideWidth;
 
       position -= slidesLeft >= sliderStep ? movePosition : slidesLeft * slideWidth;
 
       setPosition();
       checkButtons();
-    });
+    }
+
+    if (sliderButtonPrev) {
+      sliderButtonPrev.addEventListener('click', onButtonPrevClick);
+    }
+
+    if (sliderButtonNext) {
+      sliderButtonNext.addEventListener('click', onButtonNextClick);
+    }
 
     const setPosition = () => {
-      sliderTrack.style.transform = `translateX(${position}px)`;
+      if (sliderTrack) {
+        sliderTrack.style.transform = `translateX(${position}px)`;
+      }
     };
 
     const checkButtons = () => {
-      sliderButtonPrev.disabled = position === 0;
-      sliderButtonNext.disabled = position <= -(slides.length - slidesShownQuantity) * slideWidth;
+      if (sliderButtonPrev && sliderButtonNext) {
+        sliderButtonPrev.disabled = position === 0;
+        sliderButtonNext.disabled = position <= -(slides.length - slidesShownQuantity) * slideWidth;
+      }
     };
 
     checkButtons();
 
+    const swipeSlider = () => {
+      sliderTrack.addEventListener('touchstart', function (evt) {
+        let startCoords = evt.changedTouches[0].clientX;
+        let endCoords = evt.changedTouches[0].clientX;
+
+        const onMouseMove =(moveEvt) => {
+          endCoords = moveEvt.changedTouches[0].clientX;
+        };
+
+        const onMouseUp = (upEvt) => {
+          upEvt.preventDefault();
+          slidesContainer.removeEventListener('touchmove', onMouseMove);
+          slidesContainer.removeEventListener('touchend', onMouseUp);
+          let shift = startCoords - endCoords;
+
+          if (Math.abs(shift) > TOUCH_TRACK) {
+            if (shift > 0) {
+              onButtonNextClick();
+            } else {
+              onButtonPrevClick();
+            }
+          }
+        };
+
+        slidesContainer.addEventListener('touchmove', onMouseMove);
+        slidesContainer.addEventListener('touchend', onMouseUp);
+        sliderButtonPrev.addEventListener('touchstart', onButtonPrevClick);
+        sliderButtonNext.addEventListener('touchstart', onButtonNextClick);
+      });
+    }
+
+    if (window.outerWidth >= TABLET_MIN_WIDTH && window.outerWidth <= TABLET_MAX_WIDTH) {
+      swipeSlider();
+    }
+
+    if (window.outerWidth <= MOBILE_MAX_WIDTH) {
+      swipeSlider();
+    }
+
     const reinitSlider = (shownQuantity, step = shownQuantity) => {
       slidesShownQuantity = shownQuantity;
       sliderStep = step;
-      slideWidth = Math.floor((slidesContainer.clientWidth + parseFloat(getComputedStyle(slides[0]).marginRight)) / slidesShownQuantity);
-      movePosition = sliderStep * slideWidth;
+
+      if (slidesContainer) {
+        slideWidth = Math.floor((slidesContainer.clientWidth + parseFloat(getComputedStyle(slides[0]).marginRight)) / slidesShownQuantity);
+        movePosition = sliderStep * slideWidth;
+      }
     }
 
     function onWindowResize() {
-      if (window.outerWidth <= TABLET_MAX_WIDTH) {
+      if (window.outerWidth >= TABLET_MIN_WIDTH && window.outerWidth <= TABLET_MAX_WIDTH) {
         reinitSlider(tabletShownQuantity);
       }
 
@@ -165,13 +316,15 @@
   const gymVideoPlayer = gymVideoContainer.querySelector('video');
   const gymVideoLink = gymVideoContainer.querySelector('.gym__video-link');
 
-  gymVideoLink.addEventListener('click', function(evt) {
-    evt.preventDefault();
-    gymVideoLink.classList.add('gym__video-link--hidden');
-    gymVideoPlayer.play();
-  });
+  if (gymVideoPlayer && gymVideoLink) {
+    gymVideoLink.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      gymVideoLink.classList.add('gym__video-link--hidden');
+      gymVideoPlayer.play();
+    });
 
-  gymVideoPlayer.addEventListener('ended', function() {
-    gymVideoLink.classList.remove('gym__video-link--hidden');
-  });
+    gymVideoPlayer.addEventListener('ended', function () {
+      gymVideoLink.classList.remove('gym__video-link--hidden');
+    });
+  }
 })();

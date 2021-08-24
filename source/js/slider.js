@@ -1,6 +1,8 @@
 (function () {
+  const TABLET_MIN_WIDTH = 768;
   const TABLET_MAX_WIDTH = 1199;
   const MOBILE_MAX_WIDTH = 767;
+  const TOUCH_TRACK = 50;
 
   const sliders = document.querySelectorAll('.slider');
 
@@ -18,12 +20,12 @@
     let slideWidth = 0;
     let movePosition = 0;
 
-    if (window.matchMedia(`(max-width: ${TABLET_MAX_WIDTH}px)`).matches) {
+    if (window.outerWidth >= TABLET_MIN_WIDTH && window.outerWidth <= TABLET_MAX_WIDTH) {
       slidesShownQuantity = tabletShownQuantity;
       sliderStep = tabletStep;
     }
 
-    if (window.matchMedia(`(max-width: ${MOBILE_MAX_WIDTH}px)`).matches) {
+    if (window.outerWidth <= MOBILE_MAX_WIDTH) {
       slidesShownQuantity = mobileShownQuantity;
       sliderStep = mobileStep;
     }
@@ -37,26 +39,30 @@
       sliderButtonsContainer.classList.remove('slider__buttons-wrapper--hidden');
     }
 
+    const onButtonPrevClick = () => {
+      const slidesLeft = Math.abs(position) / slideWidth;
+
+      position += slidesLeft >= sliderStep ? movePosition : slidesLeft * slideWidth;
+
+      setPosition();
+      checkButtons();
+    }
+
+    const onButtonNextClick = () => {
+      const slidesLeft = slides.length - (Math.abs(position) + slidesShownQuantity * slideWidth) / slideWidth;
+
+      position -= slidesLeft >= sliderStep ? movePosition : slidesLeft * slideWidth;
+
+      setPosition();
+      checkButtons();
+    }
+
     if (sliderButtonPrev) {
-      sliderButtonPrev.addEventListener('click', () => {
-        const slidesLeft = Math.abs(position) / slideWidth;
-
-        position += slidesLeft >= sliderStep ? movePosition : slidesLeft * slideWidth;
-
-        setPosition();
-        checkButtons();
-      });
+      sliderButtonPrev.addEventListener('click', onButtonPrevClick);
     }
 
     if (sliderButtonNext) {
-      sliderButtonNext.addEventListener('click', () => {
-        const slidesLeft = slides.length - (Math.abs(position) + slidesShownQuantity * slideWidth) / slideWidth;
-
-        position -= slidesLeft >= sliderStep ? movePosition : slidesLeft * slideWidth;
-
-        setPosition();
-        checkButtons();
-      });
+      sliderButtonNext.addEventListener('click', onButtonNextClick);
     }
 
     const setPosition = () => {
@@ -74,6 +80,45 @@
 
     checkButtons();
 
+    const swipeSlider = () => {
+      sliderTrack.addEventListener('touchstart', function (evt) {
+        let startCoords = evt.changedTouches[0].clientX;
+        let endCoords = evt.changedTouches[0].clientX;
+
+        const onMouseMove =(moveEvt) => {
+          endCoords = moveEvt.changedTouches[0].clientX;
+        };
+
+        const onMouseUp = (upEvt) => {
+          upEvt.preventDefault();
+          slidesContainer.removeEventListener('touchmove', onMouseMove);
+          slidesContainer.removeEventListener('touchend', onMouseUp);
+          let shift = startCoords - endCoords;
+
+          if (Math.abs(shift) > TOUCH_TRACK) {
+            if (shift > 0) {
+              onButtonNextClick();
+            } else {
+              onButtonPrevClick();
+            }
+          }
+        };
+
+        slidesContainer.addEventListener('touchmove', onMouseMove);
+        slidesContainer.addEventListener('touchend', onMouseUp);
+        sliderButtonPrev.addEventListener('touchstart', onButtonPrevClick);
+        sliderButtonNext.addEventListener('touchstart', onButtonNextClick);
+      });
+    }
+
+    if (window.outerWidth >= TABLET_MIN_WIDTH && window.outerWidth <= TABLET_MAX_WIDTH) {
+      swipeSlider();
+    }
+
+    if (window.outerWidth <= MOBILE_MAX_WIDTH) {
+      swipeSlider();
+    }
+
     const reinitSlider = (shownQuantity, step = shownQuantity) => {
       slidesShownQuantity = shownQuantity;
       sliderStep = step;
@@ -85,7 +130,7 @@
     }
 
     function onWindowResize() {
-      if (window.outerWidth <= TABLET_MAX_WIDTH) {
+      if (window.outerWidth >= TABLET_MIN_WIDTH && window.outerWidth <= TABLET_MAX_WIDTH) {
         reinitSlider(tabletShownQuantity);
       }
 

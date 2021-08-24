@@ -30,7 +30,7 @@
 
     padding: 24px 29px 28px;
 
-    border: 7px solid transparent;
+    border: 7px solid $brightlight;
     border-image: linear-gradient(-200deg, $brightlight, #00359f);
     border-image-slice: 1;
   }

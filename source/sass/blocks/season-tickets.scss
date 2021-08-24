@@ -21,7 +21,7 @@
 }
 
 .season-tickets__tabs {
-  padding-top: 120px;
+  padding-top: 118px;
   padding-bottom: 149px;
 }
 
@@ -138,7 +138,7 @@
     border: 7px solid $lightest;
 
     &:hover {
-      border: 7px solid transparent;
+      border: 7px solid $brightlight;
       border-image: linear-gradient(-225deg, $brightlight, #00359f);
       border-image-slice: 1;
     }
@@ -274,12 +274,25 @@
   }
 
   .season-tickets__tab-switchers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 290px;
+    margin: 0 auto;
     margin-bottom: 35px;
   }
 
   .season-tickets__tab-switcher {
     &:not(:last-child) {
-      margin-right: 45px;
+      margin-right: 0;
+    }
+
+    &:not(:nth-child(3n)) {
+      margin-right: 30px;
+    }
+
+    &:last-child:not(:nth-child(3n)) {
+      margin-right: auto;
     }
 
     font-size: 16px;

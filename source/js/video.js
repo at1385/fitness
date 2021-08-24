@@ -3,13 +3,15 @@
   const gymVideoPlayer = gymVideoContainer.querySelector('video');
   const gymVideoLink = gymVideoContainer.querySelector('.gym__video-link');
 
-  gymVideoLink.addEventListener('click', function(evt) {
-    evt.preventDefault();
-    gymVideoLink.classList.add('gym__video-link--hidden');
-    gymVideoPlayer.play();
-  });
+  if (gymVideoPlayer && gymVideoLink) {
+    gymVideoLink.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      gymVideoLink.classList.add('gym__video-link--hidden');
+      gymVideoPlayer.play();
+    });
 
-  gymVideoPlayer.addEventListener('ended', function() {
-    gymVideoLink.classList.remove('gym__video-link--hidden');
-  });
+    gymVideoPlayer.addEventListener('ended', function () {
+      gymVideoLink.classList.remove('gym__video-link--hidden');
+    });
+  }
 })();

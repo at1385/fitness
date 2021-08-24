@@ -887,7 +887,7 @@ li:hover .button {
 }
 
 .season-tickets__tabs {
-  padding-top: 120px;
+  padding-top: 118px;
   padding-bottom: 149px;
 }
 
@@ -989,7 +989,7 @@ li:hover .button {
 }
 
 .season-tickets__offers li:hover {
-  border: 7px solid transparent;
+  border: 7px solid #d10a42;
   -o-border-image: linear-gradient(-225deg, #d10a42, #00359f);
      border-image: linear-gradient(-225deg, #d10a42, #00359f);
   border-image-slice: 1;
@@ -1118,13 +1118,24 @@ li:hover .button {
     padding-bottom: 35px;
   }
   .season-tickets__tab-switchers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 290px;
+    margin: 0 auto;
     margin-bottom: 35px;
   }
   .season-tickets__tab-switcher {
     font-size: 16px;
   }
   .season-tickets__tab-switcher:not(:last-child) {
-    margin-right: 45px;
+    margin-right: 0;
+  }
+  .season-tickets__tab-switcher:not(:nth-child(3n)) {
+    margin-right: 30px;
+  }
+  .season-tickets__tab-switcher:last-child:not(:nth-child(3n)) {
+    margin-right: auto;
   }
   .season-tickets__offers li {
     width: 100%;
@@ -1225,6 +1236,7 @@ li:hover .button {
   font-size: 40px;
   font-weight: 700;
   line-height: 0.9;
+  word-break: break-all;
 }
 
 .billboard__schedule span:not(:last-child) {
@@ -1918,7 +1930,7 @@ li:hover .button {
   min-height: 211px;
   margin-bottom: 40px;
   padding: 24px 29px 28px;
-  border: 7px solid transparent;
+  border: 7px solid #d10a42;
   -o-border-image: linear-gradient(-200deg, #d10a42, #00359f);
      border-image: linear-gradient(-200deg, #d10a42, #00359f);
   border-image-slice: 1;
@@ -2783,7 +2795,7 @@ li:hover .button {
 
 .page-footer__site-logo {
   margin-top: 3px;
-  margin-right: 95px;
+  margin-right: 58px;
 }
 
 .page-footer__main-navigation {

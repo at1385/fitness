@@ -15,6 +15,8 @@
     let position = 0;
     let slidesShownQuantity = desktopShownQuantity;
     let sliderStep = desktopStep;
+    let slideWidth = 0;
+    let movePosition = 0;
 
     if (window.matchMedia(`(max-width: ${TABLET_MAX_WIDTH}px)`).matches) {
       slidesShownQuantity = tabletShownQuantity;
@@ -26,36 +28,48 @@
       sliderStep = mobileStep;
     }
 
-    let slideWidth = Math.floor((slidesContainer.clientWidth + parseFloat(getComputedStyle(slides[0]).marginRight)) / slidesShownQuantity);
-    let movePosition = sliderStep * slideWidth;
+    if (slidesContainer) {
+      slideWidth = Math.floor((slidesContainer.clientWidth + parseFloat(getComputedStyle(slides[0]).marginRight)) / slidesShownQuantity);
+      movePosition = sliderStep * slideWidth;
+    }
 
-    sliderButtonsContainer.classList.remove('slider__buttons-wrapper--hidden');
+    if (sliderButtonsContainer) {
+      sliderButtonsContainer.classList.remove('slider__buttons-wrapper--hidden');
+    }
 
-    sliderButtonPrev.addEventListener('click', () => {
-      const slidesLeft = Math.abs(position) / slideWidth;
+    if (sliderButtonPrev) {
+      sliderButtonPrev.addEventListener('click', () => {
+        const slidesLeft = Math.abs(position) / slideWidth;
 
-      position += slidesLeft >= sliderStep ? movePosition : slidesLeft * slideWidth;
+        position += slidesLeft >= sliderStep ? movePosition : slidesLeft * slideWidth;
 
-      setPosition();
-      checkButtons();
-    });
+        setPosition();
+        checkButtons();
+      });
+    }
 
-    sliderButtonNext.addEventListener('click', () => {
-      const slidesLeft = slides.length - (Math.abs(position) + slidesShownQuantity * slideWidth) / slideWidth;
+    if (sliderButtonNext) {
+      sliderButtonNext.addEventListener('click', () => {
+        const slidesLeft = slides.length - (Math.abs(position) + slidesShownQuantity * slideWidth) / slideWidth;
 
-      position -= slidesLeft >= sliderStep ? movePosition : slidesLeft * slideWidth;
+        position -= slidesLeft >= sliderStep ? movePosition : slidesLeft * slideWidth;
 
-      setPosition();
-      checkButtons();
-    });
+        setPosition();
+        checkButtons();
+      });
+    }
 
     const setPosition = () => {
-      sliderTrack.style.transform = `translateX(${position}px)`;
+      if (sliderTrack) {
+        sliderTrack.style.transform = `translateX(${position}px)`;
+      }
     };
 
     const checkButtons = () => {
-      sliderButtonPrev.disabled = position === 0;
-      sliderButtonNext.disabled = position <= -(slides.length - slidesShownQuantity) * slideWidth;
+      if (sliderButtonPrev && sliderButtonNext) {
+        sliderButtonPrev.disabled = position === 0;
+        sliderButtonNext.disabled = position <= -(slides.length - slidesShownQuantity) * slideWidth;
+      }
     };
 
     checkButtons();
@@ -63,8 +77,11 @@
     const reinitSlider = (shownQuantity, step = shownQuantity) => {
       slidesShownQuantity = shownQuantity;
       sliderStep = step;
-      slideWidth = Math.floor((slidesContainer.clientWidth + parseFloat(getComputedStyle(slides[0]).marginRight)) / slidesShownQuantity);
-      movePosition = sliderStep * slideWidth;
+
+      if (slidesContainer) {
+        slideWidth = Math.floor((slidesContainer.clientWidth + parseFloat(getComputedStyle(slides[0]).marginRight)) / slidesShownQuantity);
+        movePosition = sliderStep * slideWidth;
+      }
     }
 
     function onWindowResize() {

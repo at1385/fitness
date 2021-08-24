@@ -274,12 +274,25 @@
   }
 
   .season-tickets__tab-switchers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 290px;
+    margin: 0 auto;
     margin-bottom: 35px;
   }
 
   .season-tickets__tab-switcher {
     &:not(:last-child) {
-      margin-right: 45px;
+      margin-right: 0;
+    }
+
+    &:not(:nth-child(3n)) {
+      margin-right: 30px;
+    }
+
+    &:last-child {
+      margin-right: auto;
     }
 
     font-size: 16px;

@@ -291,7 +291,7 @@
       margin-right: 30px;
     }
 
-    &:last-child {
+    &:last-child:not(:nth-child(3n)) {
       margin-right: auto;
     }
 

@@ -106,8 +106,6 @@
 
         slidesContainer.addEventListener('touchmove', onMouseMove);
         slidesContainer.addEventListener('touchend', onMouseUp);
-        sliderButtonPrev.addEventListener('touchstart', onButtonPrevClick);
-        sliderButtonNext.addEventListener('touchstart', onButtonNextClick);
       });
     }
 
@@ -127,6 +125,11 @@
         slideWidth = Math.floor((slidesContainer.clientWidth + parseFloat(getComputedStyle(slides[0]).marginRight)) / slidesShownQuantity);
         movePosition = sliderStep * slideWidth;
       }
+
+      position = 0;
+
+      setPosition();
+      checkButtons();
     }
 
     function onWindowResize() {
